@@ -6,3 +6,19 @@
 }
 
 html { scroll-behavior: auto; } /* usamos Lenis para smooth */
+
+
+@layer utilities {
+  @keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+  }
+  .dot-animate::after {
+    content: '';
+    display: inline-block;
+    width: 1ch; /* espacio reservado */
+    animation: dots 1.5s infinite steps(1);
+  }
+}
