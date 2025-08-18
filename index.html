@@ -2,12 +2,96 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leo — Desarrollador Web</title>
+    <meta name="description" content="Portfolio de Leo: desarrollo web, proyectos y contacto." />
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <div id="app">GHola</div>
-    <script type="module" src="/src/main.js"></script>
+    <header class="site-header">
+      <nav class="container nav">
+        <a class="logo" href="#hero" aria-label="Inicio">Leo.dev</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu" class="menu">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero container">
+        <div>
+          <h1>Hola, soy Leo</h1>
+          <p>Desarrollador web en formación. Construyo sitios rápidos, accesibles y responsive.</p>
+          <a class="btn" href="#proyectos">Ver proyectos</a>
+        </div>
+        <img src="./public/img/hero.jpg" alt="Ilustración de desarrollo web" />
+      </section>
+
+      <section id="sobre-mi" class="container section">
+        <h2>Sobre mí</h2>
+        <p>
+          Estudiante de Ingeniería en Informática. Enfocado en frontend con HTML, CSS y JS.
+          Aprendiendo React/Next y buenas prácticas.
+        </p>
+        <ul class="tags">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Accesibilidad</li>
+        </ul>
+      </section>
+
+      <section id="proyectos" class="container section">
+        <h2>Proyectos</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="./public/img/proyecto-1.png" alt="Captura del proyecto" />
+            <div>
+              <h3>Proyecto 1</h3>
+              <p>Landing simple con buenas prácticas de semántica y SEO.</p>
+              <a class="link" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="link" href="#" target="_blank" rel="noopener">Repo</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="./public/img/proyecto-2.png" alt="Captura del proyecto" />
+            <div>
+              <h3>Proyecto 2</h3>
+              <p>SPA pequeña con JS vanilla y rutas simples.</p>
+              <a class="link" href="https://blue-team-blush.vercel.app" target="_blank" rel="noopener">Live</a>
+              <a class="link" href="https://github.com/LeonardoGorosito/blue-team" target="_blank" rel="noopener">Repo</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto" class="container section">
+        <h2>Contacto</h2>
+        <form class="form" name="contacto" netlify>
+          <label>
+            Nombre
+            <input name="nombre" type="text" placeholder="Tu nombre" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" placeholder="tu@email.com" required />
+          </label>
+          <label>
+            Mensaje
+            <textarea name="mensaje" rows="4" placeholder="¿En qué te ayudo?" required></textarea>
+          </label>
+          <button class="btn" type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <small>© <span id="year"></span> Leo — Portfolio</small>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>
